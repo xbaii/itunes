@@ -56,15 +56,16 @@ app.controller('mainCtrl', function($scope, itunesService){
   var finalArray = function(songs) {
     var finalSongs = [];
     for(var i = 0; i < songs.length; i++){
-      var finalData = {};
-        finalData['AlbumArt'] = songs[i].artworkUrl100;
-        finalData['Artist'] = songs[i].artistName;
-        finalData['Collection'] = songs[i].collectionName;
-        finalData['CollectionPrice'] = songs[i].collectionPrice;
-        finalData['Play'] = songs[i].previewUrl;
-        finalData['Type'] = songs[i].kind;
-        finalData['TrackName'] = songs[i].trackName;
-        finalSongs.push(finalData);
+      var finalData = {
+        AlbumArt: songs[i].artworkUrl100,
+        Artist: songs[i].artistName,
+        Collection: songs[i].collectionName,
+        CollectionPrice: songs[i].collectionPrice,
+        Play: songs[i].previewUrl,
+        Type: songs[i].kind,
+        TrackName: songs[i].trackName,
+      }
+      finalSongs.push(finalData);
     }
     return finalSongs;
   };
